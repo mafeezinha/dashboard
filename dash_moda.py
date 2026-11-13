@@ -249,11 +249,11 @@ def kpi(coluna, valor, rotulo):
 st.title("👗 Dashboard da Pesquisa de Moda")
 st.caption("Hábitos de compra, acesso, descarte e estilo dos respondentes.")
 
-caminho = Path(__file__).resolve().parent.parent / "Dados" / "forms moda.xlsx"
+caminho = Path(__file__).resolve().parent / "forms moda.xlsx"
 enviado = st.sidebar.file_uploader("Planilha (opcional)", type="xlsx")
 fonte = enviado or (caminho if caminho.exists() else None)
 if fonte is None:
-    st.warning("Não encontrei **Dados/forms moda.xlsx**. Envie a planilha pela barra lateral.")
+    st.warning("Não encontrei **forms moda.xlsx** na mesma pasta do script. Envie a planilha pela barra lateral.")
     st.stop()
 
 abas = carregar(fonte)
